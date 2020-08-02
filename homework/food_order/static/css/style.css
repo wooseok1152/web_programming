@@ -1,0 +1,27 @@
+.img {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+.font {
+    font-size: x-large;
+    font-weight: bolder;
+}
+.document{
+    margin-left: 400px;
+    margin-right: 200px;
+}
+.document_input{
+    padding-right: 600px;
+}
+.input-group{
+    margin-bottom: 10px;
+}
+.form-control{
+    margin-bottom: 10px;
+}
+.button{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+}
