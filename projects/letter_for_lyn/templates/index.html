@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1st_annivesary | Login</title>
+    <title>1st annivesary | Login</title>
+    <meta property="og:title" content="1st annivesary" />
+    <meta property="og:description" content="To.lynlyn" />
+    <meta property="og:image" content="{{ url_for('static', filename='images/pic2.png') }}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
@@ -14,9 +17,9 @@
             <p style="margin-bottom: 0px; color: white; font-style: italic; font-family : Georgia, serif; font-size: 25px;">Write down the code</p>
         </div>
         <div style="height: 220px; display: flex; align-items: center; justify-content: center;">
-            <form class="form-inline">
+            <form class="form-inline" action="/login_process" method="POST">
                 <div class="form-group mx-sm-3 mb-2" style="margin-left: 0 !important; margin-bottom: 0 !important;">
-                    <input type="password" class="form-control" id="inputPassword2" placeholder="Code">
+                    <input type="password" class="form-control" id="inputPassword2" placeholder="Code" name="code">
                 </div>
                 <button type="submit" class="btn btn-warning mb-2" style="color: white; font-style: italic; font-family : Georgia, serif; margin-bottom: 0 !important;">Login</button>
             </form>
