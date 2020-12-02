@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Education</title>
+    <style>
+        div {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="four_rule_cal">
+        <h2>1.자연수의 사칙연산</h2>
+        <p id="four_rule_plus"><span id="four_rule_plus_span"></span><input style="width: 154px;" type="text" name="plus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_answer_check"></span><button style="margin-left: 20px;" onclick="plus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="plus_refresh()">새로고침</button>
+        </p>
+        <p id="four_rule_minus"><span id="four_rule_minus_span"></span><input style="width: 154px;" type="text" name="minus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="minus_answer_check"></span><button style="margin-left: 20px;" onclick="minus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="minus_refresh()">새로고침</button>
+        </p>
+        <p id="four_rule_multiply"><span id="four_rule_multiply_span"></span><input style="width: 154px;" type="text" name="multiply_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="multiply_answer_check"></span><button style="margin-left: 20px;" onclick="multiply_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="multiply_refresh()">새로고침</button>
+        </p>
+        <p id="four_rule_divide"><span id="four_rule_divide_span"></span><input style="width: 154px;" type="text" name="divide_input_box" placeholder="몫을 입력해주세요."><span style="margin-left: 20px;" id="divide_answer_check"></span><button style="margin-left: 20px;" onclick="divide_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="divide_refresh()">새로고침</button>
+        </p>
+
+        <h2>2.방정식의 해 구하기('X'값 구하기)</h2>
+        <p id="equation_plus"><span id="equation_plus_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_plus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_x_check"></span>
+            <button style="margin-left: 20px;" onclick="equation_plus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="equation_plus_refresh()">새로고침</button></p>
+        <p id="equation_minus"><span id="equation_minus_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_minus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="minus_x_check"></span>
+            <button style="margin-left: 20px;" onclick="equation_minus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="equation_minus_refresh()">새로고침</button></p>
+        <p id="equation_multiply"><span id="equation_multiply_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_multiply_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="multiply_x_check"></span>
+            <button style="margin-left: 20px;" onclick="equation_multiply_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="equation_multiply_refresh()">새로고침</button></p>
+        <p id="equation_divide"><span id="equation_divide_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_divide_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="divide_x_check"></span>
+            <button style="margin-left: 20px;" onclick="equation_divide_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="equation_divide_refresh()">새로고침</button></p>
+
+    </div>
+
+
+
+    <script>
+        /*자연수의 사칙연산*/
+        // 초기 plus 연산 피연산자 설정
+        let random_number_1 = Math.floor(Math.random() * 50);
+        let random_number_2 = Math.floor(Math.random() * 50);
+        $("#four_rule_plus_span").text(`${random_number_1} + ${random_number_2} = `);
+
+        // 초기 minus 연산 피연산자 설정
+        let random_number_3 = Math.floor(Math.random() * 50);
+        let random_number_4 = Math.floor(Math.random() * 50);
+
+        // 첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출
+        while (random_number_3 < random_number_4) {
+
+            random_number_3 = Math.floor(Math.random() * 50);
+            random_number_4 = Math.floor(Math.random() * 50);
+        }
+        $("#four_rule_minus_span").text(`${random_number_3} - ${random_number_4} = `);
+
+        // 초기 multiply 연산 피연산자 설정
+        let random_number_5 = Math.floor(Math.random() * 50);
+        let random_number_6 = Math.floor(Math.random() * 50);
+        $("#four_rule_multiply_span").text(`${random_number_5} * ${random_number_6} = `);
+
+        // 초기 divide 연산 피연산자 설정
+        let random_number_7 = Math.floor(Math.random() * 50);
+        let random_number_8 = Math.floor(Math.random() * 50);
+
+        // 첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출
+        while (random_number_7 < random_number_8) {
+
+            random_number_7 = Math.floor(Math.random() * 50);
+            random_number_8 = Math.floor(Math.random() * 50);
+        }
+        $("#four_rule_divide_span").text(`${random_number_7} / ${random_number_8} = `);
+
+        function plus_refresh() {
+
+            random_number_1 = Math.floor(Math.random() * 50);
+            random_number_2 = Math.floor(Math.random() * 50);
+            $("#four_rule_plus_span").empty();
+            $("#four_rule_plus_span").text(`${random_number_1} + ${random_number_2} = `);
+        }
+
+        function minus_refresh() {
+
+            random_number_3 = Math.floor(Math.random() * 50);
+            random_number_4 = Math.floor(Math.random() * 50);
+            while (random_number_3 < random_number_4) {
+
+                random_number_3 = Math.floor(Math.random() * 50);
+                random_number_4 = Math.floor(Math.random() * 50);
+            }
+            $("#four_rule_minus_span").empty();
+            $("#four_rule_minus_span").text(`${random_number_3} - ${random_number_4} = `);
+        }
+
+        function multiply_refresh() {
+
+            random_number_5 = Math.floor(Math.random() * 50);
+            random_number_6 = Math.floor(Math.random() * 50);
+            $("#four_rule_multiply_span").empty();
+            $("#four_rule_multiply_span").text(`${random_number_5} * ${random_number_6} = `);
+        }
+
+        function divide_refresh() {
+
+            random_number_7 = Math.floor(Math.random() * 50);
+            random_number_8 = Math.floor(Math.random() * 50);
+            while (random_number_7 < random_number_8) {
+
+                random_number_7 = Math.floor(Math.random() * 50);
+                random_number_8 = Math.floor(Math.random() * 50);
+            }
+            $("#four_rule_divide_span").empty();
+            $("#four_rule_divide_span").text(`${random_number_7} / ${random_number_8} = `);
+        }
+
+        function plus_check() {
+
+            let user_answer = $("input[name=plus_input_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = random_number_1 + random_number_2;
+            if (user_answer != real_answer) {
+
+                $("#plus_answer_check").text('틀렸습니다.');
+            } else {
+
+                $("#plus_answer_check").text('맞았습니다.');
+            }
+        }
+
+        function minus_check() {
+
+            let user_answer = $("input[name=minus_input_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = random_number_3 - random_number_4;
+            if (user_answer != real_answer) {
+
+                $("#minus_answer_check").text('틀렸습니다.');
+            } else {
+
+                $("#minus_answer_check").text('맞았습니다.');
+            }
+        }
+
+        function multiply_check() {
+
+            let user_answer = $("input[name=multiply_input_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = random_number_5 * random_number_6;
+            if (user_answer != real_answer) {
+
+                $("#multiply_answer_check").text('틀렸습니다.');
+            } else {
+
+                $("#multiply_answer_check").text('맞았습니다.');
+            }
+        }
+
+        function divide_check() {
+
+            let user_answer = $("input[name=divide_input_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = parseInt(random_number_7 / random_number_8);
+            if (user_answer != real_answer) {
+
+                $("#divide_answer_check").text('틀렸습니다.');
+            } else {
+
+                $("#divide_answer_check").text('맞았습니다.');
+            }
+        }
+
+        /*방정식의 해 구하기*/
+        let equation_plus_constant = Math.floor(Math.random() * 50);
+        let equation_plus_answer = Math.floor(Math.random() * 50);
+        while (equation_plus_constant > equation_plus_answer) {
+
+            equation_plus_constant = Math.floor(Math.random() * 50);
+            equation_plus_answer = Math.floor(Math.random() * 50);
+        }
+        $("#equation_plus_span").text(`${equation_plus_constant} + X = ${equation_plus_answer}`);
+
+        let equation_minus_constant = Math.floor(Math.random() * 50);
+        let equation_minus_answer = Math.floor(Math.random() * 50);
+        while (equation_minus_constant < equation_minus_answer) {
+
+            equation_minus_constant = Math.floor(Math.random() * 50);
+            equation_minus_answer = Math.floor(Math.random() * 50);
+        }
+        $("#equation_minus_span").text(`${equation_minus_constant} - X = ${equation_minus_answer}`);
+
+        // 약수들을 구하고 그 중 하나를 return하는 함수
+        function divisors(integer) {
+            // console.log(integer);
+            let divisor_list = [];
+            for (var i = 2; i < integer; i++) {
+                if (integer % i == 0) {
+                    divisor_list.push(i);
+                }
+            }
+            console.log(divisor_list);
+            let picked_divisor = divisor_list[Math.floor(Math.random() * divisor_list.length)];
+            return picked_divisor;
+        }
+
+        // equation_mulyiply_answer가 소수인지 아닌지 판별하는 함수
+        function chkPrime(integer) {
+            for (var i = 2; i < integer; i++) {
+                var result = integer % i;
+                if (result == 0) {
+                    return false;
+                };
+            };
+            return true;
+        }
+
+        let equation_multiply_answer = Math.floor(Math.random() * 300);
+        while (equation_multiply_answer == 1 || chkPrime(equation_multiply_answer)) {
+
+            equation_multiply_answer = Math.floor(Math.random() * 300);
+        }
+        let equation_multiply_constant = divisors(equation_multiply_answer);
+        $("#equation_multiply_span").text(`${equation_multiply_constant} * X = ${equation_multiply_answer}`);
+
+        let equation_divide_constant = Math.floor(Math.random() * 300);
+        while (equation_divide_constant == 1 || chkPrime(equation_divide_constant)) {
+
+            equation_divide_constant = Math.floor(Math.random() * 300);
+        }
+        let equation_divide_answer = divisors(equation_divide_constant);
+        $("#equation_divide_span").text(`${equation_divide_constant} / X = ${equation_divide_answer}`);
+
+        function equation_plus_check() {
+
+            let user_answer = $("input[name=equation_plus_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = equation_plus_answer - equation_plus_constant;
+            if (user_answer != real_answer) {
+
+                $("#plus_x_check").text('틀렸습니다.');
+            } else {
+
+                $("#plus_x_check").text('맞았습니다.');
+            }
+        }
+
+        function equation_minus_check() {
+
+            let user_answer = $("input[name=equation_minus_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = equation_minus_constant - equation_minus_answer;
+            if (user_answer != real_answer) {
+
+                $("#minus_x_check").text('틀렸습니다.');
+            } else {
+
+                $("#minus_x_check").text('맞았습니다.');
+            }
+        }
+
+        function equation_multiply_check() {
+
+            let user_answer = $("input[name=equation_multiply_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = parseInt(equation_multiply_answer / equation_multiply_constant);
+            if (user_answer != real_answer) {
+
+                $("#multiply_x_check").text('틀렸습니다.');
+            } else {
+
+                $("#multiply_x_check").text('맞았습니다.');
+            }
+        }
+
+        function equation_divide_check() {
+
+            let user_answer = $("input[name=equation_divide_box]").val();
+            user_answer = parseInt(user_answer);
+            console.log(user_answer);
+            console.log(typeof(user_answer));
+
+            let real_answer = equation_divide_constant / equation_divide_answer;
+            if (user_answer != real_answer) {
+
+                $("#divide_x_check").text('틀렸습니다.');
+            } else {
+
+                $("#divide_x_check").text('맞았습니다.');
+            }
+        }
+
+        function equation_plus_refresh() {
+
+            equation_plus_constant = Math.floor(Math.random() * 50);
+            equation_plus_answer = Math.floor(Math.random() * 50);
+            while (equation_plus_constant > equation_plus_answer) {
+
+                equation_plus_constant = Math.floor(Math.random() * 50);
+                equation_plus_answer = Math.floor(Math.random() * 50);
+            }
+            $("#equation_plus_span").empty();
+            $("#equation_plus_span").text(`${equation_plus_constant} + X = ${equation_plus_answer}`);
+        }
+
+        function equation_minus_refresh() {
+
+            equation_minus_constant = Math.floor(Math.random() * 50);
+            equation_minus_answer = Math.floor(Math.random() * 50);
+            while (equation_minus_constant < equation_minus_answer) {
+
+                equation_minus_constant = Math.floor(Math.random() * 50);
+                equation_minus_answer = Math.floor(Math.random() * 50);
+            }
+            $("#equation_minus_span").empty();
+            $("#equation_minus_span").text(`${equation_minus_constant} - X = ${equation_minus_answer}`);
+        }
+
+        function equation_multiply_refresh() {
+
+            equation_multiply_answer = Math.floor(Math.random() * 300);
+            while (equation_multiply_answer == 1 || chkPrime(equation_multiply_answer)) {
+
+                equation_multiply_answer = Math.floor(Math.random() * 300);
+            }
+            equation_multiply_constant = divisors(equation_multiply_answer);
+            $("#equation_multiply_span").empty();
+            $("#equation_multiply_span").text(`${equation_multiply_constant} * X = ${equation_multiply_answer}`);
+        }
+
+        function equation_divide_refresh() {
+
+            equation_divide_constant = Math.floor(Math.random() * 300);
+            while (equation_divide_constant == 1 || chkPrime(equation_divide_constant)) {
+
+                equation_divide_constant = Math.floor(Math.random() * 300);
+            }
+            equation_divide_answer = divisors(equation_divide_constant);
+            $("#equation_divide_span").empty();
+            $("#equation_divide_span").text(`${equation_divide_constant} / X = ${equation_divide_answer}`);
+        }
+    </script>
+</body>
+
+</html>
