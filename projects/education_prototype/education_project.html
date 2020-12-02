@@ -16,33 +16,57 @@
 <body>
     <div id="four_rule_cal">
         <h2>1.자연수의 사칙연산</h2>
-        <p id="four_rule_plus"><span id="four_rule_plus_span"></span><input style="width: 154px;" type="text" name="plus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_answer_check"></span><button style="margin-left: 20px;" onclick="plus_check()">정답 확인</button>
+        <p id="four_rule_plus"><span id="four_rule_plus_span"></span><input id="plus_input" style="width: 154px;" type="text" name="plus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_answer_check"></span><button style="margin-left: 20px;" onclick="plus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="plus_refresh()">새로고침</button>
         </p>
-        <p id="four_rule_minus"><span id="four_rule_minus_span"></span><input style="width: 154px;" type="text" name="minus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="minus_answer_check"></span><button style="margin-left: 20px;" onclick="minus_check()">정답 확인</button>
+        <p id="four_rule_minus"><span id="four_rule_minus_span"></span><input id="minus_input" style="width: 154px;" type="text" name="minus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="minus_answer_check"></span><button style="margin-left: 20px;"
+                onclick="minus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="minus_refresh()">새로고침</button>
         </p>
-        <p id="four_rule_multiply"><span id="four_rule_multiply_span"></span><input style="width: 154px;" type="text" name="multiply_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="multiply_answer_check"></span><button style="margin-left: 20px;" onclick="multiply_check()">정답 확인</button>
+        <p id="four_rule_multiply"><span id="four_rule_multiply_span"></span><input id="multiply_input" style="width: 154px;" type="text" name="multiply_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="multiply_answer_check"></span><button style="margin-left: 20px;"
+                onclick="multiply_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="multiply_refresh()">새로고침</button>
         </p>
-        <p id="four_rule_divide"><span id="four_rule_divide_span"></span><input style="width: 154px;" type="text" name="divide_input_box" placeholder="몫을 입력해주세요."><span style="margin-left: 20px;" id="divide_answer_check"></span><button style="margin-left: 20px;" onclick="divide_check()">정답 확인</button>
+        <p id="four_rule_divide"><span id="four_rule_divide_span"></span><input id="divide_input" style="width: 154px;" type="text" name="divide_input_box" placeholder="몫을 입력해주세요."><span style="margin-left: 20px;" id="divide_answer_check"></span><button style="margin-left: 20px;"
+                onclick="divide_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="divide_refresh()">새로고침</button>
         </p>
 
         <h2>2.방정식의 해 구하기('X'값 구하기)</h2>
-        <p id="equation_plus"><span id="equation_plus_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_plus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_x_check"></span>
+        <p id="equation_plus"><span id="equation_plus_span" style="margin-right: 40px;"></span>X :<input id="plus_equation_input" style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_plus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;"
+                id="plus_x_check"></span>
             <button style="margin-left: 20px;" onclick="equation_plus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="equation_plus_refresh()">새로고침</button></p>
-        <p id="equation_minus"><span id="equation_minus_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_minus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="minus_x_check"></span>
+        <p id="equation_minus"><span id="equation_minus_span" style="margin-right: 40px;"></span>X :<input id="minus_equation_input" style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_minus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;"
+                id="minus_x_check"></span>
             <button style="margin-left: 20px;" onclick="equation_minus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="equation_minus_refresh()">새로고침</button></p>
-        <p id="equation_multiply"><span id="equation_multiply_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_multiply_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="multiply_x_check"></span>
+        <p id="equation_multiply"><span id="equation_multiply_span" style="margin-right: 40px;"></span>X :<input id="multiply_equation_input" style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_multiply_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;"
+                id="multiply_x_check"></span>
             <button style="margin-left: 20px;" onclick="equation_multiply_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="equation_multiply_refresh()">새로고침</button></p>
-        <p id="equation_divide"><span id="equation_divide_span" style="margin-right: 40px;"></span>X :<input style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_divide_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="divide_x_check"></span>
+        <p id="equation_divide"><span id="equation_divide_span" style="margin-right: 40px;"></span>X :<input id="divide_equation_input" style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_divide_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;"
+                id="divide_x_check"></span>
             <button style="margin-left: 20px;" onclick="equation_divide_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="equation_divide_refresh()">새로고침</button></p>
 
+        <h2>3.분수 사칙연산</h2>
+        <p id="fraction_plus"><span><sup id="fraction_plus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_first" style="font-size: 20px;"></sub> + <sup id="fraction_plus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_second" style="font-size: 20px;"></sub></span>            =
+            <sup><input id="fraction_plus_input_upper" style="width: 20px;"></sup>/<sub><input id="fraction_plus_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_plus_check()">정답 확인</button><button style="margin-left: 20px;"
+                onclick="fraction_plus_refresh()">새로고침</button></p>
+
+        <p id="fraction_minus"><span><sup id="fraction_minus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_first" style="font-size: 20px;"></sub> - <sup id="fraction_minus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_second" style="font-size: 20px;"></sub></span>            =
+            <sup><input id="fraction_minus_input_upper" style="width: 20px;"></sup>/<sub><input id="fraction_minus_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_minus_check()">정답 확인</button><button style="margin-left: 20px;"
+                onclick="fraction_minus_refresh()">새로고침</button></p>
+
+        <p id="fraction_multiply"><span><sup id="fraction_multiply_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_first" style="font-size: 20px;"></sub> * <sup id="fraction_multiply_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_second" style="font-size: 20px;"></sub></span>            =
+            <sup><input id="fraction_multiply_input_upper" style="width: 20px;"></sup>/<sub><input id="fraction_multiply_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_multiply_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="fraction_multiply_refresh()">새로고침</button>
+        </p>
+
+        <p id="fraction_divide"><span><sup id="fraction_divide_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_first" style="font-size: 20px;"></sub> ÷ <sup id="fraction_divide_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_second" style="font-size: 20px;"></sub></span>            =
+            <sup><input id="fraction_divide_input_upper" style="width: 20px;"></sup>/<sub><input id="fraction_divide_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_divide_check()">정답 확인</button><button style="margin-left: 20px;"
+                onclick="fraction_divide_refresh()">새로고침</button></p>
     </div>
 
 
@@ -81,7 +105,7 @@
             random_number_7 = Math.floor(Math.random() * 50);
             random_number_8 = Math.floor(Math.random() * 50);
         }
-        $("#four_rule_divide_span").text(`${random_number_7} / ${random_number_8} = `);
+        $("#four_rule_divide_span").text(`${random_number_7} ÷ ${random_number_8} = `);
 
         function plus_refresh() {
 
@@ -89,6 +113,8 @@
             random_number_2 = Math.floor(Math.random() * 50);
             $("#four_rule_plus_span").empty();
             $("#four_rule_plus_span").text(`${random_number_1} + ${random_number_2} = `);
+            $("#plus_answer_check").empty();
+            $("#plus_input").val('');
         }
 
         function minus_refresh() {
@@ -102,6 +128,8 @@
             }
             $("#four_rule_minus_span").empty();
             $("#four_rule_minus_span").text(`${random_number_3} - ${random_number_4} = `);
+            $("#minus_answer_check").empty();
+            $("#minus_input").val('');
         }
 
         function multiply_refresh() {
@@ -110,6 +138,8 @@
             random_number_6 = Math.floor(Math.random() * 50);
             $("#four_rule_multiply_span").empty();
             $("#four_rule_multiply_span").text(`${random_number_5} * ${random_number_6} = `);
+            $("#multiply_answer_check").empty();
+            $("#multiply_input").val('');
         }
 
         function divide_refresh() {
@@ -123,6 +153,8 @@
             }
             $("#four_rule_divide_span").empty();
             $("#four_rule_divide_span").text(`${random_number_7} / ${random_number_8} = `);
+            $("#divide_answer_check").empty();
+            $("#divide_input").val('');
         }
 
         function plus_check() {
@@ -194,6 +226,7 @@
         }
 
         /*방정식의 해 구하기*/
+        // 방정식 해 구하기 초기값 설정
         let equation_plus_constant = Math.floor(Math.random() * 50);
         let equation_plus_answer = Math.floor(Math.random() * 50);
         while (equation_plus_constant > equation_plus_answer) {
@@ -251,7 +284,7 @@
             equation_divide_constant = Math.floor(Math.random() * 300);
         }
         let equation_divide_answer = divisors(equation_divide_constant);
-        $("#equation_divide_span").text(`${equation_divide_constant} / X = ${equation_divide_answer}`);
+        $("#equation_divide_span").text(`${equation_divide_constant} ÷ X = ${equation_divide_answer}`);
 
         function equation_plus_check() {
 
@@ -332,6 +365,8 @@
             }
             $("#equation_plus_span").empty();
             $("#equation_plus_span").text(`${equation_plus_constant} + X = ${equation_plus_answer}`);
+            $("#plus_x_check").empty();
+            $("#plus_equation_input").val('');
         }
 
         function equation_minus_refresh() {
@@ -345,6 +380,8 @@
             }
             $("#equation_minus_span").empty();
             $("#equation_minus_span").text(`${equation_minus_constant} - X = ${equation_minus_answer}`);
+            $("#minus_x_check").empty();
+            $("#minus_equation_input").val('');
         }
 
         function equation_multiply_refresh() {
@@ -357,6 +394,8 @@
             equation_multiply_constant = divisors(equation_multiply_answer);
             $("#equation_multiply_span").empty();
             $("#equation_multiply_span").text(`${equation_multiply_constant} * X = ${equation_multiply_answer}`);
+            $("#multiply_x_check").empty();
+            $("#multiply_equation_input").val('');
         }
 
         function equation_divide_refresh() {
@@ -369,7 +408,154 @@
             equation_divide_answer = divisors(equation_divide_constant);
             $("#equation_divide_span").empty();
             $("#equation_divide_span").text(`${equation_divide_constant} / X = ${equation_divide_answer}`);
+            $("#divide_x_check").empty();
+            $("#divide_equation_input").val('');
         }
+
+        /* 분수 사칙연산*/
+        // 최대공약수와 최소공배수를 반환하는 함수
+        function gcdlcm(a, b) {
+            let gcd = 1;
+            let lcm = 1;
+            for (let i = 1; i <= Math.min(a, b); i++) {
+                if ((a % i == 0) && (b % i == 0)) {
+                    gcd = i
+                }
+            }
+            lcm = a * b / gcd
+            return [gcd, lcm]
+        }
+
+        // 분수 사칙연산 초기값 설정
+        let fraction_plus_upper_first = Math.floor(Math.random() * 10);
+        while (fraction_plus_upper_first == 0) {
+
+            fraction_plus_upper_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_plus_lower_first = Math.floor(Math.random() * 10);
+        while (fraction_plus_lower_first == 0) {
+
+            fraction_plus_lower_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_plus_upper_second = Math.floor(Math.random() * 10);
+        while (fraction_plus_upper_second == 0) {
+
+            fraction_plus_upper_second = Math.floor(Math.random() * 10);
+        }
+        let fraction_plus_lower_second = Math.floor(Math.random() * 10);
+        while (fraction_plus_lower_second == 0) {
+
+            fraction_plus_lower_second = Math.floor(Math.random() * 10);
+        }
+
+        $("#fraction_plus_upper_first").text(`${fraction_plus_upper_first}`);
+        $("#fraction_plus_lower_first").text(`${fraction_plus_lower_first}`);
+        $("#fraction_plus_upper_second").text(`${fraction_plus_upper_second}`);
+        $("#fraction_plus_lower_second").text(`${fraction_plus_lower_second}`);
+
+        let fraction_minus_upper_first = Math.floor(Math.random() * 10);
+        while (fraction_minus_upper_first == 0) {
+
+            fraction_minus_upper_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_minus_lower_first = Math.floor(Math.random() * 10);
+        while (fraction_minus_lower_first == 0) {
+
+            fraction_minus_lower_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_minus_upper_second = Math.floor(Math.random() * 10);
+        while (fraction_minus_upper_second == 0) {
+
+            fraction_minus_upper_second = Math.floor(Math.random() * 10);
+        }
+        let fraction_minus_lower_second = Math.floor(Math.random() * 10);
+        while (fraction_minus_lower_second == 0) {
+
+            fraction_minus_lower_second = Math.floor(Math.random() * 10);
+        }
+        while ((fraction_minus_upper_first / fraction_minus_lower_first) - (fraction_minus_upper_second / fraction_minus_lower_second) < 0) {
+
+            fraction_minus_upper_first = Math.floor(Math.random() * 10);
+            while (fraction_minus_upper_first == 0) {
+
+                fraction_minus_upper_first = Math.floor(Math.random() * 10);
+            }
+
+            fraction_minus_lower_first = Math.floor(Math.random() * 10);
+            while (fraction_minus_lower_first == 0) {
+
+                fraction_minus_lower_first = Math.floor(Math.random() * 10);
+            }
+
+            fraction_minus_upper_second = Math.floor(Math.random() * 10);
+            while (fraction_minus_upper_second == 0) {
+
+                fraction_minus_upper_second = Math.floor(Math.random() * 10);
+            }
+
+            fraction_minus_lower_second = Math.floor(Math.random() * 10);
+            while (fraction_minus_lower_second == 0) {
+
+                fraction_minus_lower_second = Math.floor(Math.random() * 10);
+            }
+        }
+
+        $("#fraction_minus_upper_first").text(`${fraction_minus_upper_first}`);
+        $("#fraction_minus_lower_first").text(`${fraction_minus_lower_first}`);
+        $("#fraction_minus_upper_second").text(`${fraction_minus_upper_second}`);
+        $("#fraction_minus_lower_second").text(`${fraction_minus_lower_second}`);
+
+        let fraction_multiply_upper_first = Math.floor(Math.random() * 10);
+        while (fraction_multiply_upper_first == 0) {
+
+            fraction_multiply_upper_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_multiply_lower_first = Math.floor(Math.random() * 10);
+        while (fraction_multiply_lower_first == 0) {
+
+            fraction_multiply_lower_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_multiply_upper_second = Math.floor(Math.random() * 10);
+        while (fraction_multiply_upper_second == 0) {
+
+            fraction_multiply_upper_second = Math.floor(Math.random() * 10);
+        }
+        let fraction_multiply_lower_second = Math.floor(Math.random() * 10);
+        while (fraction_multiply_lower_second == 0) {
+
+            fraction_multiply_lower_second = Math.floor(Math.random() * 10);
+        }
+
+        $("#fraction_multiply_upper_first").text(`${fraction_multiply_upper_first}`);
+        $("#fraction_multiply_lower_first").text(`${fraction_multiply_lower_first}`);
+        $("#fraction_multiply_upper_second").text(`${fraction_multiply_upper_second}`);
+        $("#fraction_multiply_lower_second").text(`${fraction_multiply_lower_second}`);
+
+        let fraction_divide_upper_first = Math.floor(Math.random() * 10);
+        while (fraction_divide_upper_first == 0) {
+
+            fraction_divide_upper_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_divide_lower_first = Math.floor(Math.random() * 10);
+        while (fraction_divide_lower_first == 0) {
+
+            fraction_divide_lower_first = Math.floor(Math.random() * 10);
+        }
+        let fraction_divide_upper_second = Math.floor(Math.random() * 10);
+        while (fraction_divide_upper_second == 0) {
+
+            fraction_divide_upper_second = Math.floor(Math.random() * 10);
+        }
+        let fraction_divide_lower_second = Math.floor(Math.random() * 10);
+        while (fraction_divide_lower_second == 0) {
+
+            fraction_divide_lower_second = Math.floor(Math.random() * 10);
+        }
+
+        $("#fraction_divide_upper_first").text(`${fraction_divide_upper_first}`);
+        $("#fraction_divide_lower_first").text(`${fraction_divide_lower_first}`);
+        $("#fraction_divide_upper_second").text(`${fraction_divide_upper_second}`);
+        $("#fraction_divide_lower_second").text(`${fraction_divide_lower_second}`);
     </script>
 </body>
 
