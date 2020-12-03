@@ -15,7 +15,7 @@
 
 <body>
     <div id="four_rule_cal">
-        <h2>1.자연수의 사칙연산</h2>
+        <h2>1. 자연수의 사칙연산</h2>
         <p id="four_rule_plus"><span id="four_rule_plus_span"></span><input id="plus_input" style="width: 154px;" type="text" name="plus_input_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;" id="plus_answer_check"></span><button style="margin-left: 20px;" onclick="plus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="plus_refresh()">새로고침</button>
         </p>
@@ -32,7 +32,7 @@
             <button style="margin-left: 20px;" onclick="divide_refresh()">새로고침</button>
         </p>
 
-        <h2>2.방정식의 해 구하기('X'값 구하기)</h2>
+        <h2>2. 방정식의 해 구하기('X'값 구하기)</h2>
         <p id="equation_plus"><span id="equation_plus_span" style="margin-right: 40px;"></span>X :<input id="plus_equation_input" style="width: 154px; margin-left: 7px; height: 12px;" type="text" name="equation_plus_box" placeholder="자연수를 입력해주세요."><span style="margin-left: 20px;"
                 id="plus_x_check"></span>
             <button style="margin-left: 20px;" onclick="equation_plus_check()">정답 확인</button>
@@ -50,30 +50,44 @@
             <button style="margin-left: 20px;" onclick="equation_divide_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="equation_divide_refresh()">새로고침</button></p>
 
-        <h2>3.분수 사칙연산(약분해서 정답 기입할 것)</h2>
+        <h2>3. 분수 사칙연산(약분해서 정답을 기입할 것)</h2>
         <p id="fraction_plus"><span><sup id="fraction_plus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_first" style="font-size: 20px;"></sub> + <sup id="fraction_plus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_plus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_plus_input_lower" style="width: 20px;"></sub><span id="fraction_plus_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
-                onclick="fraction_plus_check()">정답 확인</button>
+            <sup><input id="fraction_plus_input_upper" name="fraction_plus_input_upper" style="width: 25px; text-align: right;" placeholder="분자"></sup>/<sub><input id="fraction_plus_input_lower" name="fraction_plus_input_lower" style="width: 25px;" placeholder="분모"></sub>
+            <span id="fraction_plus_check_span" style="margin-left: 20px;"></span>
+            <button style="margin-left: 20px;" onclick="fraction_plus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_plus_refresh()">새로고침</button>
         </p>
 
         <p id="fraction_minus"><span><sup id="fraction_minus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_first" style="font-size: 20px;"></sub> - <sup id="fraction_minus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_minus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_minus_input_lower" style="width: 20px;"></sub><span id="fraction_minus_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
-                onclick="fraction_minus_check()">정답 확인</button>
+            <sup><input id="fraction_minus_input_upper" name="fraction_minus_input_upper" style="width: 25px; text-align: right;" placeholder="분자"></sup>/<sub><input id="fraction_minus_input_lower" name="fraction_minus_input_lower" style="width: 25px;" placeholder="분모"></sub>
+            <span id="fraction_minus_check_span" style="margin-left: 20px;"></span>
+            <button style="margin-left: 20px;" onclick="fraction_minus_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_minus_refresh()">새로고침</button>
         </p>
 
         <p id="fraction_multiply"><span><sup id="fraction_multiply_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_first" style="font-size: 20px;"></sub> * <sup id="fraction_multiply_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_multiply_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_multiply_input_lower" style="width: 20px;"></sub><span id="fraction_multiply_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
-                onclick="fraction_multiply_check()">정답 확인</button>
+            <sup><input id="fraction_multiply_input_upper" name="fraction_multiply_input_upper" style="width: 25px; text-align: right;" placeholder="분자"></sup>/<sub><input id="fraction_multiply_input_lower" name="fraction_multiply_input_lower" style="width: 25px;" placeholder="분모"></sub>
+            <span id="fraction_multiply_check_span" style="margin-left: 20px;"></span>
+            <button style="margin-left: 20px;" onclick="fraction_multiply_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_multiply_refresh()">새로고침</button>
         </p>
 
         <p id="fraction_divide"><span><sup id="fraction_divide_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_first" style="font-size: 20px;"></sub> ÷ <sup id="fraction_divide_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_divide_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_divide_input_lower" style="width: 20px;"></sub><span id="fraction_divide_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
-                onclick="fraction_divide_check()">정답 확인</button>
+            <sup><input id="fraction_divide_input_upper" name="fraction_divide_input_upper" style="width: 25px; text-align: right;" placeholder="분자"></sup>/<sub><input id="fraction_divide_input_lower" name="fraction_divide_input_lower" style="width: 25px;" placeholder="분모"></sub>
+            <span id="fraction_divide_check_span" style="margin-left: 20px;"></span>
+            <button style="margin-left: 20px;" onclick="fraction_divide_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_divide_refresh()">새로고침</button>
         </p>
+
+        <h2>4. 두 시간의 합(분에서 시간으로 받아올림이 필요한 경우, 받아올림하여 정답을 기입할 것)</h2>
+        <p id="sum_of_time"><span id="first_time_hour"></span>시간 <span id="first_time_minute"></span>분 + <span id="second_time_hour"></span>시간 <span id="second_time_minute"></span>분 = <input id="hour_input" name="hour_input" style="width: 20px; text-align: right;" type="text">시간
+            <input id="minute_input" name="minute_input" style="width: 20px; text-align: right;" type="text">분 <span id="sum_of_time_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;" onclick="sum_of_time_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="sum_of_time_refresh()">새로고침</button>
+        </p>
+
+        <h2>5. 원주 구하기</h2>
+
+
     </div>
 
 
@@ -422,6 +436,20 @@
         /* 분수 사칙연산 */
         // 최대공약수와 최소공배수를 반환하는 함수
         function gcdlcm(a, b) {
+
+            if (a == 1 && b == 1) {
+
+                return [1, 1]
+            } else if (a == 1 && b != 1) {
+
+                return [1, b]
+            } else if (b == 1 && a != 1) {
+
+                return [1, a]
+            } else if (a == b) {
+
+                return 'same'
+            }
             let gcd = 1;
             let lcm = 1;
             for (let i = 1; i <= Math.min(a, b); i++) {
@@ -480,7 +508,7 @@
 
             fraction_minus_lower_second = Math.floor(Math.random() * 10);
         }
-        while ((fraction_minus_upper_first / fraction_minus_lower_first) - (fraction_minus_upper_second / fraction_minus_lower_second) < 0) {
+        while ((fraction_minus_upper_first / fraction_minus_lower_first) - (fraction_minus_upper_second / fraction_minus_lower_second) <= 0) {
 
             fraction_minus_upper_first = Math.floor(Math.random() * 10);
             while (fraction_minus_upper_first == 0) {
@@ -564,7 +592,7 @@
         $("#fraction_divide_upper_second").text(`${fraction_divide_upper_second}`);
         $("#fraction_divide_lower_second").text(`${fraction_divide_lower_second}`);
 
-        // fraction check 함수 선언
+        // fraction 정답 확인 함수 선언
         function fraction_plus_check() {
 
             // console.log(fraction_plus_upper_first);
@@ -573,48 +601,77 @@
             // console.log(fraction_plus_lower_second);
 
             let gcd_and_lcm = gcdlcm(fraction_plus_lower_first, fraction_plus_lower_second);
-            let gcd = gcd_and_lcm[0]
-            let lcm = gcd_and_lcm[1]
+            if (gcd_and_lcm == "same") {
 
-            console.log(gcd);
-            console.log(lcm);
+                let answer_upper = fraction_plus_upper_first + fraction_plus_upper_second;
+                let answer_lower = fraction_plus_lower_first;
 
-            let picked_constant_for_upper_first = lcm / fraction_plus_lower_first;
-            let picked_constant_for_upper_second = lcm / fraction_plus_lower_second;
+                gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
+                let answer_gcd = gcd_and_lcm[0];
+                let answer_lcm = gcd_and_lcm[1];
 
-            console.log(picked_constant_for_upper_first);
-            console.log(picked_constant_for_upper_second);
+                answer_upper = answer_upper / answer_gcd;
+                answer_lower = answer_lower / answer_gcd;
 
-            let multiplied_upper_first = fraction_plus_upper_first * picked_constant_for_upper_first;
-            let multiplied_upper_second = fraction_plus_upper_second * picked_constant_for_upper_second;
+                console.log(answer_upper);
+                console.log(answer_lower);
 
-            console.log(multiplied_upper_first);
-            console.log(multiplied_upper_second);
+                let user_fraction_plus_input_upper = $("input[name=fraction_plus_input_upper]").val();
+                let user_fraction_plus_input_lower = $("input[name=fraction_plus_input_lower]").val();
+                user_fraction_plus_input_upper = parseInt(user_fraction_plus_input_upper);
+                user_fraction_plus_input_lower = parseInt(user_fraction_plus_input_lower);
 
-            let answer_upper = multiplied_upper_first + multiplied_upper_second;
-            let answer_lower = lcm
+                if (answer_upper == user_fraction_plus_input_upper && answer_lower == user_fraction_plus_input_lower) {
 
-            gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
-            let answer_gcd = gcd_and_lcm[0];
-            let answer_lcm = gcd_and_lcm[1];
+                    $("#fraction_plus_check_span").text("맞았습니다.");
+                } else {
 
-            answer_upper = answer_upper / answer_gcd;
-            answer_lower = answer_lower / answer_gcd;
-
-            console.log(answer_upper);
-            console.log(answer_lower);
-
-            let user_fraction_plus_input_upper = $("input[name=fraction_plus_input_upper]").val();
-            let user_fraction_plus_input_lower = $("input[name=fraction_plus_input_lower]").val();
-            user_fraction_plus_input_upper = parseInt(user_fraction_plus_input_upper);
-            user_fraction_plus_input_lower = parseInt(user_fraction_plus_input_lower);
-
-            if (answer_upper == user_fraction_plus_input_upper && answer_lower == user_fraction_plus_input_lower) {
-
-                $("#fraction_plus_check_span").text("맞았습니다.");
+                    $("#fraction_plus_check_span").text("틀렸습니다.");
+                }
             } else {
+                let gcd = gcd_and_lcm[0]
+                let lcm = gcd_and_lcm[1]
 
-                $("#fraction_plus_check_span").text("틀렸습니다.");
+                console.log('gcd :', gcd);
+                console.log('lcm :', lcm);
+
+                let picked_constant_for_upper_first = lcm / fraction_plus_lower_first;
+                let picked_constant_for_upper_second = lcm / fraction_plus_lower_second;
+
+                console.log(picked_constant_for_upper_first);
+                console.log(picked_constant_for_upper_second);
+
+                let multiplied_upper_first = fraction_plus_upper_first * picked_constant_for_upper_first;
+                let multiplied_upper_second = fraction_plus_upper_second * picked_constant_for_upper_second;
+
+                console.log(multiplied_upper_first);
+                console.log(multiplied_upper_second);
+
+                let answer_upper = multiplied_upper_first + multiplied_upper_second;
+                let answer_lower = lcm
+
+                gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
+                let answer_gcd = gcd_and_lcm[0];
+                let answer_lcm = gcd_and_lcm[1];
+
+                answer_upper = answer_upper / answer_gcd;
+                answer_lower = answer_lower / answer_gcd;
+
+                console.log(answer_upper);
+                console.log(answer_lower);
+
+                let user_fraction_plus_input_upper = $("input[name=fraction_plus_input_upper]").val();
+                let user_fraction_plus_input_lower = $("input[name=fraction_plus_input_lower]").val();
+                user_fraction_plus_input_upper = parseInt(user_fraction_plus_input_upper);
+                user_fraction_plus_input_lower = parseInt(user_fraction_plus_input_lower);
+
+                if (answer_upper == user_fraction_plus_input_upper && answer_lower == user_fraction_plus_input_lower) {
+
+                    $("#fraction_plus_check_span").text("맞았습니다.");
+                } else {
+
+                    $("#fraction_plus_check_span").text("틀렸습니다.");
+                }
             }
 
         }
@@ -662,7 +719,6 @@
             let user_fraction_minus_input_lower = $("input[name=fraction_minus_input_lower]").val();
             user_fraction_minus_input_upper = parseInt(user_fraction_minus_input_upper);
             user_fraction_minus_input_lower = parseInt(user_fraction_minus_input_lower);
-
             if (answer_upper == user_fraction_minus_input_upper && answer_lower == user_fraction_minus_input_lower) {
 
                 $("#fraction_minus_check_span").text("맞았습니다.");
@@ -671,6 +727,283 @@
                 $("#fraction_minus_check_span").text("틀렸습니다.");
             }
 
+        }
+
+        function fraction_multiply_check() {
+
+            let answer_upper = fraction_multiply_upper_first * fraction_multiply_upper_second;
+            let answer_lower = fraction_multiply_lower_first * fraction_multiply_lower_second;
+
+            let gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
+            let answer_gcd = gcd_and_lcm[0];
+            let answer_lcm = gcd_and_lcm[1];
+
+            answer_upper = answer_upper / answer_gcd;
+            answer_lower = answer_lower / answer_gcd;
+
+            let user_fraction_multiply_input_upper = $("input[name=fraction_multiply_input_upper]").val();
+            let user_fraction_multiply_input_lower = $("input[name=fraction_multiply_input_lower]").val();
+            user_fraction_multiply_input_upper = parseInt(user_fraction_multiply_input_upper);
+            user_fraction_multiply_input_lower = parseInt(user_fraction_multiply_input_lower);
+            if (answer_upper == user_fraction_multiply_input_upper && answer_lower == user_fraction_multiply_input_lower) {
+
+                $("#fraction_multiply_check_span").text("맞았습니다.");
+            } else {
+
+                $("#fraction_multiply_check_span").text("틀렸습니다.");
+            }
+
+        }
+
+        function fraction_divide_check() {
+
+            let answer_upper = fraction_divide_upper_first * fraction_divide_lower_second;
+            let answer_lower = fraction_divide_lower_first * fraction_divide_upper_second;
+
+            let gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
+            let answer_gcd = gcd_and_lcm[0];
+            let answer_lcm = gcd_and_lcm[1];
+
+            answer_upper = answer_upper / answer_gcd;
+            answer_lower = answer_lower / answer_gcd;
+
+            let user_fraction_divide_input_upper = $("input[name=fraction_divide_input_upper]").val();
+            let user_fraction_divide_input_lower = $("input[name=fraction_divide_input_lower]").val();
+            user_fraction_divide_input_upper = parseInt(user_fraction_divide_input_upper);
+            user_fraction_divide_input_lower = parseInt(user_fraction_divide_input_lower);
+            if (answer_upper == user_fraction_divide_input_upper && answer_lower == user_fraction_divide_input_lower) {
+
+                $("#fraction_divide_check_span").text("맞았습니다.");
+            } else {
+
+                $("#fraction_divide_check_span").text("틀렸습니다.");
+            }
+        }
+
+        // 분수 사칙연산 새로고침 함수 선언
+        function fraction_plus_refresh() {
+
+            fraction_plus_upper_first = Math.floor(Math.random() * 10);
+            while (fraction_plus_upper_first == 0) {
+
+                fraction_plus_upper_first = Math.floor(Math.random() * 10);
+            }
+            fraction_plus_lower_first = Math.floor(Math.random() * 10);
+            while (fraction_plus_lower_first == 0) {
+
+                fraction_plus_lower_first = Math.floor(Math.random() * 10);
+            }
+            fraction_plus_upper_second = Math.floor(Math.random() * 10);
+            while (fraction_plus_upper_second == 0) {
+
+                fraction_plus_upper_second = Math.floor(Math.random() * 10);
+            }
+            fraction_plus_lower_second = Math.floor(Math.random() * 10);
+            while (fraction_plus_lower_second == 0) {
+
+                fraction_plus_lower_second = Math.floor(Math.random() * 10);
+            }
+
+            $("#fraction_plus_upper_first").text(`${fraction_plus_upper_first}`);
+            $("#fraction_plus_lower_first").text(`${fraction_plus_lower_first}`);
+            $("#fraction_plus_upper_second").text(`${fraction_plus_upper_second}`);
+            $("#fraction_plus_lower_second").text(`${fraction_plus_lower_second}`);
+
+            $("#fraction_plus_input_upper").val('');
+            $("#fraction_plus_input_lower").val('');
+
+            $("#fraction_plus_check_span").empty();
+        }
+
+        function fraction_minus_refresh() {
+
+            fraction_minus_upper_first = Math.floor(Math.random() * 10);
+            while (fraction_minus_upper_first == 0) {
+
+                fraction_minus_upper_first = Math.floor(Math.random() * 10);
+            }
+            fraction_minus_lower_first = Math.floor(Math.random() * 10);
+            while (fraction_minus_lower_first == 0) {
+
+                fraction_minus_lower_first = Math.floor(Math.random() * 10);
+            }
+            fraction_minus_upper_second = Math.floor(Math.random() * 10);
+            while (fraction_minus_upper_second == 0) {
+
+                fraction_minus_upper_second = Math.floor(Math.random() * 10);
+            }
+            fraction_minus_lower_second = Math.floor(Math.random() * 10);
+            while (fraction_minus_lower_second == 0) {
+
+                fraction_minus_lower_second = Math.floor(Math.random() * 10);
+            }
+            while ((fraction_minus_upper_first / fraction_minus_lower_first) - (fraction_minus_upper_second / fraction_minus_lower_second) <= 0) {
+
+                fraction_minus_upper_first = Math.floor(Math.random() * 10);
+                while (fraction_minus_upper_first == 0) {
+
+                    fraction_minus_upper_first = Math.floor(Math.random() * 10);
+                }
+
+                fraction_minus_lower_first = Math.floor(Math.random() * 10);
+                while (fraction_minus_lower_first == 0) {
+
+                    fraction_minus_lower_first = Math.floor(Math.random() * 10);
+                }
+
+                fraction_minus_upper_second = Math.floor(Math.random() * 10);
+                while (fraction_minus_upper_second == 0) {
+
+                    fraction_minus_upper_second = Math.floor(Math.random() * 10);
+                }
+
+                fraction_minus_lower_second = Math.floor(Math.random() * 10);
+                while (fraction_minus_lower_second == 0) {
+
+                    fraction_minus_lower_second = Math.floor(Math.random() * 10);
+                }
+            }
+
+            $("#fraction_minus_upper_first").text(`${fraction_minus_upper_first}`);
+            $("#fraction_minus_lower_first").text(`${fraction_minus_lower_first}`);
+            $("#fraction_minus_upper_second").text(`${fraction_minus_upper_second}`);
+            $("#fraction_minus_lower_second").text(`${fraction_minus_lower_second}`);
+
+            $("#fraction_minus_input_upper").val('');
+            $("#fraction_minus_input_lower").val('');
+
+            $("#fraction_minus_check_span").empty();
+        }
+
+        function fraction_multiply_refresh() {
+
+            fraction_multiply_upper_first = Math.floor(Math.random() * 10);
+            while (fraction_multiply_upper_first == 0) {
+
+                fraction_multiply_upper_first = Math.floor(Math.random() * 10);
+            }
+            fraction_multiply_lower_first = Math.floor(Math.random() * 10);
+            while (fraction_multiply_lower_first == 0) {
+
+                fraction_multiply_lower_first = Math.floor(Math.random() * 10);
+            }
+            fraction_multiply_upper_second = Math.floor(Math.random() * 10);
+            while (fraction_multiply_upper_second == 0) {
+
+                fraction_multiply_upper_second = Math.floor(Math.random() * 10);
+            }
+            fraction_multiply_lower_second = Math.floor(Math.random() * 10);
+            while (fraction_multiply_lower_second == 0) {
+
+                fraction_multiply_lower_second = Math.floor(Math.random() * 10);
+            }
+
+            $("#fraction_multiply_upper_first").text(`${fraction_multiply_upper_first}`);
+            $("#fraction_multiply_lower_first").text(`${fraction_multiply_lower_first}`);
+            $("#fraction_multiply_upper_second").text(`${fraction_multiply_upper_second}`);
+            $("#fraction_multiply_lower_second").text(`${fraction_multiply_lower_second}`);
+
+            $("#fraction_multiply_input_upper").val('');
+            $("#fraction_multiply_input_lower").val('');
+
+            $("#fraction_multiply_check_span").empty();
+        }
+
+        function fraction_divide_refresh() {
+
+            fraction_divide_upper_first = Math.floor(Math.random() * 10);
+            while (fraction_divide_upper_first == 0) {
+
+                fraction_divide_upper_first = Math.floor(Math.random() * 10);
+            }
+            fraction_divide_lower_first = Math.floor(Math.random() * 10);
+            while (fraction_divide_lower_first == 0) {
+
+                fraction_divide_lower_first = Math.floor(Math.random() * 10);
+            }
+            fraction_divide_upper_second = Math.floor(Math.random() * 10);
+            while (fraction_divide_upper_second == 0) {
+
+                fraction_divide_upper_second = Math.floor(Math.random() * 10);
+            }
+            fraction_divide_lower_second = Math.floor(Math.random() * 10);
+            while (fraction_divide_lower_second == 0) {
+
+                fraction_divide_lower_second = Math.floor(Math.random() * 10);
+            }
+
+            $("#fraction_divide_upper_first").text(`${fraction_divide_upper_first}`);
+            $("#fraction_divide_lower_first").text(`${fraction_divide_lower_first}`);
+            $("#fraction_divide_upper_second").text(`${fraction_divide_upper_second}`);
+            $("#fraction_divide_lower_second").text(`${fraction_divide_lower_second}`);
+
+            $("#fraction_divide_input_upper").val('');
+            $("#fraction_divide_input_lower").val('');
+
+            $("#fraction_divide_check_span").empty();
+        }
+
+        /* 두 시간의 합 */
+        // 두 시간의 초기값 설정
+        let first_time_hour = Math.floor(Math.random() * 10);
+        let first_time_minute = Math.floor(Math.random() * 60);
+        let second_time_hour = Math.floor(Math.random() * 10);
+        let second_time_minute = Math.floor(Math.random() * 60);
+
+        $("#first_time_hour").text(`${first_time_hour}`);
+        $("#first_time_minute").text(`${first_time_minute}`);
+        $("#second_time_hour").text(`${second_time_hour}`);
+        $("#second_time_minute").text(`${second_time_minute}`);
+
+        // 정답 확인 함수 선언
+        function sum_of_time_check() {
+
+            let answer_hour = first_time_hour + second_time_hour;
+            let answer_minute = first_time_minute + second_time_minute;
+
+            console.log("answer_hour :", answer_hour);
+            console.log("answer_minute :", answer_minute);
+
+            let answer_minute_share = parseInt(answer_minute / 60);
+            let answer_minute_remainder = answer_minute % 60;
+
+            console.log("answer_minute_share :", answer_minute_share);
+            console.log("answer_minute_remainder :", answer_minute_remainder);
+
+            answer_hour = answer_hour + answer_minute_share;
+            answer_minute = answer_minute_remainder;
+
+            console.log("final_answer_hour ;", answer_hour);
+            console.log("final_answer_minute ;", answer_minute);
+
+            let user_hour_input = parseInt($("input[name=hour_input]").val());
+            let user_minute_input = parseInt($("input[name=minute_input]").val());
+
+            if (answer_hour == user_hour_input && answer_minute == user_minute_input) {
+
+                $("#sum_of_time_check_span").text("정답입니다.");
+            } else {
+
+                $("#sum_of_time_check_span").text("틀렸습니다.");
+            }
+        }
+
+        // 새로고침 함수 선언
+        function sum_of_time_refresh() {
+
+            first_time_hour = Math.floor(Math.random() * 10);
+            first_time_minute = Math.floor(Math.random() * 60);
+            second_time_hour = Math.floor(Math.random() * 10);
+            second_time_minute = Math.floor(Math.random() * 60);
+
+            $("#first_time_hour").text(`${first_time_hour}`);
+            $("#first_time_minute").text(`${first_time_minute}`);
+            $("#second_time_hour").text(`${second_time_hour}`);
+            $("#second_time_minute").text(`${second_time_minute}`);
+
+            $("#sum_of_time_check_span").empty();
+            $("#hour_input").val('');
+            $("#minute_input").val('');
         }
     </script>
 </body>
