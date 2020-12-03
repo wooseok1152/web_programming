@@ -52,20 +52,26 @@
 
         <h2>3.분수 사칙연산(약분해서 정답 기입할 것)</h2>
         <p id="fraction_plus"><span><sup id="fraction_plus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_first" style="font-size: 20px;"></sub> + <sup id="fraction_plus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_plus_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_plus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_plus_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_plus_check()">정답 확인</button><button style="margin-left: 20px;"
-                onclick="fraction_plus_refresh()">새로고침</button></p>
+            <sup><input name="fraction_plus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_plus_input_lower" style="width: 20px;"></sub><span id="fraction_plus_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
+                onclick="fraction_plus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="fraction_plus_refresh()">새로고침</button>
+        </p>
 
         <p id="fraction_minus"><span><sup id="fraction_minus_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_first" style="font-size: 20px;"></sub> - <sup id="fraction_minus_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_minus_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_minus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_minus_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_minus_check()">정답 확인</button><button style="margin-left: 20px;"
-                onclick="fraction_minus_refresh()">새로고침</button></p>
+            <sup><input name="fraction_minus_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_minus_input_lower" style="width: 20px;"></sub><span id="fraction_minus_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
+                onclick="fraction_minus_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="fraction_minus_refresh()">새로고침</button>
+        </p>
 
         <p id="fraction_multiply"><span><sup id="fraction_multiply_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_first" style="font-size: 20px;"></sub> * <sup id="fraction_multiply_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_multiply_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_multiply_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_multiply_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_multiply_check()">정답 확인</button>
+            <sup><input name="fraction_multiply_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_multiply_input_lower" style="width: 20px;"></sub><span id="fraction_multiply_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
+                onclick="fraction_multiply_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_multiply_refresh()">새로고침</button>
         </p>
 
         <p id="fraction_divide"><span><sup id="fraction_divide_upper_first" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_first" style="font-size: 20px;"></sub> ÷ <sup id="fraction_divide_upper_second" style="font-size: 20px;"></sup>/<sub id="fraction_divide_lower_second" style="font-size: 20px;"></sub></span>            =
-            <sup><input name="fraction_divide_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_divide_input_lower" style="width: 20px;"></sub><button style="margin-left: 20px;" onclick="fraction_divide_check()">정답 확인</button>
+            <sup><input name="fraction_divide_input_upper" style="width: 20px;"></sup>/<sub><input name="fraction_divide_input_lower" style="width: 20px;"></sub><span id="fraction_divide_check_span" style="margin-left: 20px;"></span><button style="margin-left: 20px;"
+                onclick="fraction_divide_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="fraction_divide_refresh()">새로고침</button>
         </p>
     </div>
@@ -605,10 +611,64 @@
 
             if (answer_upper == user_fraction_plus_input_upper && answer_lower == user_fraction_plus_input_lower) {
 
-                console.log("정답입니다.");
+                $("#fraction_plus_check_span").text("맞았습니다.");
             } else {
 
-                console.log("틀렸습니다.");
+                $("#fraction_plus_check_span").text("틀렸습니다.");
+            }
+
+        }
+
+        function fraction_minus_check() {
+
+            // console.log(fraction_plus_upper_first);
+            // console.log(fraction_plus_lower_first);
+            // console.log(fraction_plus_upper_second);
+            // console.log(fraction_plus_lower_second);
+
+            let gcd_and_lcm = gcdlcm(fraction_minus_lower_first, fraction_minus_lower_second);
+            let gcd = gcd_and_lcm[0]
+            let lcm = gcd_and_lcm[1]
+
+            console.log(gcd);
+            console.log(lcm);
+
+            let picked_constant_for_minus_first = lcm / fraction_minus_lower_first;
+            let picked_constant_for_minus_second = lcm / fraction_minus_lower_second;
+
+            console.log(picked_constant_for_minus_first);
+            console.log(picked_constant_for_minus_second);
+
+            let multiplied_upper_first = fraction_minus_upper_first * picked_constant_for_minus_first;
+            let multiplied_upper_second = fraction_minus_upper_second * picked_constant_for_minus_second;
+
+            console.log(multiplied_upper_first);
+            console.log(multiplied_upper_second);
+
+            let answer_upper = multiplied_upper_first - multiplied_upper_second;
+            let answer_lower = lcm
+
+            gcd_and_lcm = gcdlcm(answer_upper, answer_lower);
+            let answer_gcd = gcd_and_lcm[0];
+            let answer_lcm = gcd_and_lcm[1];
+
+            answer_upper = answer_upper / answer_gcd;
+            answer_lower = answer_lower / answer_gcd;
+
+            console.log(answer_upper);
+            console.log(answer_lower);
+
+            let user_fraction_minus_input_upper = $("input[name=fraction_minus_input_upper]").val();
+            let user_fraction_minus_input_lower = $("input[name=fraction_minus_input_lower]").val();
+            user_fraction_minus_input_upper = parseInt(user_fraction_minus_input_upper);
+            user_fraction_minus_input_lower = parseInt(user_fraction_minus_input_lower);
+
+            if (answer_upper == user_fraction_minus_input_upper && answer_lower == user_fraction_minus_input_lower) {
+
+                $("#fraction_minus_check_span").text("맞았습니다.");
+            } else {
+
+                $("#fraction_minus_check_span").text("틀렸습니다.");
             }
 
         }
