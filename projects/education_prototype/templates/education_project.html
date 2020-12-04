@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -86,7 +89,12 @@
         </p>
 
         <h2>5. 원주 구하기</h2>
-
+        <p style="margin-bottom: 0px;"><span id="circle_span"></span></p>
+        <p style="margin-top: 0px; margin-left: 30px;">반지름 : <span id="radius_span" style=" margin-right: 100px;"></span> 정답 : <input id="circle_user_input" name="circle_user_input" style="margin-left: 5px; width: 45px; margin-right: 5px; text-align: right;" type="text">π<span id="circle_check_span"
+                style="margin-left: 20px;"></span>
+            <button style="margin-left: 20px;" onclick="circle_check()">정답 확인</button>
+            <button style="margin-left: 20px;" onclick="circle_refresh()">새로고침</button>
+        </p>
 
     </div>
 
@@ -1004,6 +1012,58 @@
             $("#sum_of_time_check_span").empty();
             $("#hour_input").val('');
             $("#minute_input").val('');
+        }
+
+        /* 원주 구하기 */
+        // ajax로 circle 이미지 불러오기
+        $.ajax({
+            type: "GET", // GET 방식으로 요청한다.
+            url: "/circle_img_process",
+            data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
+            success: function(response) { // 서버에서 준 결과를 response라는 변수에 담음
+
+                let circle_path = response["circle_path"]; // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+                let radius = response["radius"];
+                console.log(circle_path, typeof(circle_path));
+                console.log(radius, typeof(radius));
+                $("#circle_span").append(`<img src=${circle_path}>`);
+                $("#radius_span").text(`${radius}`);
+            }
+        })
+
+        function circle_check() {
+
+            let radius_span_val = parseFloat($("#radius_span").text());
+            console.log(radius_span_val, typeof(radius_span_val));
+            let user_answer = $("input[name=circle_user_input]").val();
+            if (user_answer == radius_span_val * 2) {
+
+                $("#circle_check_span").text("맞았습니다.");
+            } else {
+
+                $("#circle_check_span").text("틀렸습니다.");
+            }
+        }
+
+        function circle_refresh() {
+
+            $("#circle_span").empty();
+            $.ajax({
+                type: "GET", // GET 방식으로 요청한다.
+                url: "/circle_img_process",
+                data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
+                success: function(response) { // 서버에서 준 결과를 response라는 변수에 담음
+
+                    let circle_path = response["circle_path"]; // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+                    let radius = response["radius"];
+                    console.log(circle_path, typeof(circle_path));
+                    console.log(radius, typeof(radius));
+                    $("#circle_span").append(`<img src=${circle_path}>`);
+                    $("#radius_span").text(`${radius}`);
+                    $("#circle_user_input").val('');
+                    $("#circle_check_span").empty();
+                }
+            })
         }
     </script>
 </body>
