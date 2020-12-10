@@ -95,7 +95,7 @@
             <button style="margin-left: 20px;" onclick="circle_check()">정답 확인</button>
             <button style="margin-left: 20px;" onclick="circle_refresh()">새로고침</button>
         </p>
-        <h2>6. 두 비의 관계를 연비로 나타내기</h2>
+        <h2>6. 두 비의 관계를 연비로 나타내기(세 개의 항이 약분가능하면, 약분한 결과를 정답으로 기입할 것)</h2>
         <p id="ratio_first_firstrow" style="font-size: 25px; margin-top: 10px; margin-bottom: 10px;"><span id="ratio_first_firstrow_firstelement"></span> : <span id="ratio_first_firstrow_secondelement"></span> : <span id="ratio_first_firstrow_thirdelement"></span>x</p>
         <p id="ratio_first_secondrow" style="font-size: 25px; margin-top: 10px; margin-bottom: 10px;">x<span id="ratio_first_secondrow_firstelement"></span> : <span id="ratio_first_secondrow_secondelement"></span> : <span id="ratio_first_secondrow_thirdelement"></span></p>
         <hr width="115px" align="left" color="black">
@@ -1169,6 +1169,24 @@
 
         function ratio_first_check() {
 
+            let first_answer_before_divided = ratio_first_firstelement * ratio_first_thirdelement;
+            let second_answer_before_divided = ratio_first_secondelement * ratio_first_thirdelement;
+            let third_answer_before_divided = ratio_first_secondelement * ratio_first_fourthelement;
+            console.log("first_answer_before_divided :", first_answer_before_divided)
+            console.log("second_answer_before_divided :", second_answer_before_divided)
+            console.log("third_answer_before_divided :", third_answer_before_divided)
+
+            let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
+            let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
+            console.log("gcd_for_three_answer :", gcd_for_three_answer);
+
+            let first_answer_after_divided = first_answer_before_divided / gcd_for_three_answer;
+            let second_answer_after_divided = second_answer_before_divided / gcd_for_three_answer;
+            let third_answer_after_divided = third_answer_before_divided / gcd_for_three_answer;
+            console.log("first_answer_after_divided :", first_answer_after_divided);
+            console.log("second_answer_after_divided :", second_answer_after_divided);
+            console.log("third_answer_after_divided :", third_answer_after_divided);
+
             let user_firstelement = parseInt($("input[name=ratio_first_user_firstelement]").val());
             let user_secondelement = parseInt($("input[name=ratio_first_user_secondelement]").val());
             let user_thirdelement = parseInt($("input[name=ratio_first_user_thirdelement]").val());
@@ -1176,7 +1194,7 @@
             console.log(user_secondelement, typeof(user_secondelement));
             console.log(user_thirdelement, typeof(user_thirdelement));
 
-            if (user_secondelement == ratio_first_secondelement * ratio_first_thirdelement && user_firstelement == ratio_first_firstelement * ratio_first_thirdelement && user_thirdelement == ratio_first_secondelement * ratio_first_fourthelement) {
+            if (user_secondelement == second_answer_after_divided && user_firstelement == first_answer_after_divided && user_thirdelement == third_answer_after_divided) {
 
                 $("#ratio_first_check_span").text("맞았습니다.");
             } else {
@@ -1187,6 +1205,24 @@
 
         function ratio_second_check() {
 
+            let first_answer_before_divided = ratio_second_firstelement * ratio_second_thirdelement;
+            let second_answer_before_divided = ratio_second_secondelement * ratio_second_thirdelement;
+            let third_answer_before_divided = ratio_second_firstelement * ratio_second_fourthelement;
+            console.log("first_answer_before_divided :", first_answer_before_divided)
+            console.log("second_answer_before_divided :", second_answer_before_divided)
+            console.log("third_answer_before_divided :", third_answer_before_divided)
+
+            let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
+            let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
+            console.log("gcd_for_three_answer :", gcd_for_three_answer);
+
+            let first_answer_after_divided = first_answer_before_divided / gcd_for_three_answer;
+            let second_answer_after_divided = second_answer_before_divided / gcd_for_three_answer;
+            let third_answer_after_divided = third_answer_before_divided / gcd_for_three_answer;
+            console.log("first_answer_after_divided :", first_answer_after_divided);
+            console.log("second_answer_after_divided :", second_answer_after_divided);
+            console.log("third_answer_after_divided :", third_answer_after_divided);
+
             let user_firstelement = parseInt($("input[name=ratio_second_user_firstelement]").val());
             let user_secondelement = parseInt($("input[name=ratio_second_user_secondelement]").val());
             let user_thirdelement = parseInt($("input[name=ratio_second_user_thirdelement]").val());
@@ -1194,7 +1230,7 @@
             console.log(user_secondelement, typeof(user_secondelement));
             console.log(user_thirdelement, typeof(user_thirdelement));
 
-            if (user_secondelement == ratio_second_secondelement * ratio_second_thirdelement && user_firstelement == ratio_second_firstelement * ratio_second_thirdelement && user_thirdelement == ratio_second_firstelement * ratio_second_fourthelement) {
+            if (user_secondelement == second_answer_after_divided && user_firstelement == first_answer_after_divided && user_thirdelement == third_answer_after_divided) {
 
                 $("#ratio_second_check_span").text("맞았습니다.");
             } else {
@@ -1205,6 +1241,24 @@
 
         function ratio_third_check() {
 
+            let first_answer_before_divided = ratio_third_firstelement * ratio_third_fourthelement;
+            let second_answer_before_divided = ratio_third_secondelement * ratio_third_thirdelement;
+            let third_answer_before_divided = ratio_third_secondelement * ratio_third_fourthelement;
+            console.log("first_answer_before_divided :", first_answer_before_divided)
+            console.log("second_answer_before_divided :", second_answer_before_divided)
+            console.log("third_answer_before_divided :", third_answer_before_divided)
+
+            let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
+            let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
+            console.log("gcd_for_three_answer :", gcd_for_three_answer);
+
+            let first_answer_after_divided = first_answer_before_divided / gcd_for_three_answer;
+            let second_answer_after_divided = second_answer_before_divided / gcd_for_three_answer;
+            let third_answer_after_divided = third_answer_before_divided / gcd_for_three_answer;
+            console.log("first_answer_after_divided :", first_answer_after_divided);
+            console.log("second_answer_after_divided :", second_answer_after_divided);
+            console.log("third_answer_after_divided :", third_answer_after_divided);
+
             let user_firstelement = parseInt($("input[name=ratio_third_user_firstelement]").val());
             let user_secondelement = parseInt($("input[name=ratio_third_user_secondelement]").val());
             let user_thirdelement = parseInt($("input[name=ratio_third_user_thirdelement]").val());
@@ -1212,7 +1266,7 @@
             console.log(user_secondelement, typeof(user_secondelement));
             console.log(user_thirdelement, typeof(user_thirdelement));
 
-            if (user_secondelement == ratio_third_secondelement * ratio_third_thirdelement && user_firstelement == ratio_third_firstelement * ratio_third_fourthelement && user_thirdelement == ratio_third_secondelement * ratio_third_fourthelement) {
+            if (user_secondelement == second_answer_after_divided && user_firstelement == first_answer_after_divided && user_thirdelement == third_answer_after_divided) {
 
                 $("#ratio_third_check_span").text("맞았습니다.");
             } else {
