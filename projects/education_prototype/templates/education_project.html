@@ -128,17 +128,17 @@
 
 
     <script>
-        /*자연수의 사칙연산*/
-        // 초기 plus 연산 피연산자 설정
+        /*1. 자연수의 사칙연산*/
+        //초기 plus 연산 피연산자 설정(0에서 50사이의 난수)
         let random_number_1 = Math.floor(Math.random() * 50);
         let random_number_2 = Math.floor(Math.random() * 50);
         $("#four_rule_plus_span").text(`${random_number_1} + ${random_number_2} = `);
 
-        // 초기 minus 연산 피연산자 설정
+        //초기 minus 연산 피연산자 설정초기 plus 연산 피연산자 설정(0에서 50사이의 난수)
         let random_number_3 = Math.floor(Math.random() * 50);
         let random_number_4 = Math.floor(Math.random() * 50);
 
-        // 첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출
+        //첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출(음수 개념을 제외시킴)
         while (random_number_3 < random_number_4) {
 
             random_number_3 = Math.floor(Math.random() * 50);
@@ -146,16 +146,16 @@
         }
         $("#four_rule_minus_span").text(`${random_number_3} - ${random_number_4} = `);
 
-        // 초기 multiply 연산 피연산자 설정
+        //초기 multiply 연산 피연산자 설정(0에서 50사이의 난수)
         let random_number_5 = Math.floor(Math.random() * 50);
         let random_number_6 = Math.floor(Math.random() * 50);
         $("#four_rule_multiply_span").text(`${random_number_5} * ${random_number_6} = `);
 
-        // 초기 divide 연산 피연산자 설정
+        //초기 divide 연산 피연산자 설정(0에서 50사이의 난수)
         let random_number_7 = Math.floor(Math.random() * 50);
         let random_number_8 = Math.floor(Math.random() * 50);
 
-        // 첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출
+        //첫번째 피연산자가 두번째 피연산자보다 무조건 크도록 while문 호출(몫만을 구하도록 설계했고, 몫이 0이 안 나오도록 설정함)
         while (random_number_7 < random_number_8) {
 
             random_number_7 = Math.floor(Math.random() * 50);
@@ -163,6 +163,7 @@
         }
         $("#four_rule_divide_span").text(`${random_number_7} ÷ ${random_number_8} = `);
 
+        //더하기 연산 문제 새로고침 함수 선언
         function plus_refresh() {
 
             random_number_1 = Math.floor(Math.random() * 50);
@@ -173,6 +174,7 @@
             $("#plus_input").val('');
         }
 
+        //빼기 연산 문제 새로고침 함수 선언
         function minus_refresh() {
 
             random_number_3 = Math.floor(Math.random() * 50);
@@ -188,6 +190,7 @@
             $("#minus_input").val('');
         }
 
+        //곱하기 연산 문제 새로고침 함수 선언
         function multiply_refresh() {
 
             random_number_5 = Math.floor(Math.random() * 50);
@@ -198,6 +201,7 @@
             $("#multiply_input").val('');
         }
 
+        //나누기 연산 문제 새로고침 함수 선언
         function divide_refresh() {
 
             random_number_7 = Math.floor(Math.random() * 50);
@@ -213,6 +217,7 @@
             $("#divide_input").val('');
         }
 
+        //더하기 연산문제 정답 확인 함수 선언
         function plus_check() {
 
             let user_answer = $("input[name=plus_input_box]").val();
@@ -230,6 +235,7 @@
             }
         }
 
+        //빼기 연산문제 정답 확인 함수 선언
         function minus_check() {
 
             let user_answer = $("input[name=minus_input_box]").val();
@@ -247,6 +253,7 @@
             }
         }
 
+        //곱하기 연산문제 정답 확인 함수 선언
         function multiply_check() {
 
             let user_answer = $("input[name=multiply_input_box]").val();
@@ -264,6 +271,7 @@
             }
         }
 
+        //나누기 연산문제 정답 확인 함수 선언
         function divide_check() {
 
             let user_answer = $("input[name=divide_input_box]").val();
@@ -281,10 +289,10 @@
             }
         }
 
-        /*방정식의 해 구하기*/
-        // 방정식 해 구하기 초기값 설정
-        let equation_plus_constant = Math.floor(Math.random() * 50);
-        let equation_plus_answer = Math.floor(Math.random() * 50);
+        /*2. 방정식의 해 구하기*/
+        //더하기 연산 식의 초기값 설정
+        let equation_plus_constant = Math.floor(Math.random() * 50); //좌변의 상수항
+        let equation_plus_answer = Math.floor(Math.random() * 50); //우변의 상수항
         while (equation_plus_constant > equation_plus_answer) {
 
             equation_plus_constant = Math.floor(Math.random() * 50);
@@ -292,8 +300,10 @@
         }
         $("#equation_plus_span").text(`${equation_plus_constant} + X = ${equation_plus_answer}`);
 
-        let equation_minus_constant = Math.floor(Math.random() * 50);
-        let equation_minus_answer = Math.floor(Math.random() * 50);
+        //빼기 연산 식의 초기값 설정
+        let equation_minus_constant = Math.floor(Math.random() * 50); //좌변의 상수항
+        let equation_minus_answer = Math.floor(Math.random() * 50); //우변의 상수항
+        //좌변의 상수항이 우변의 상수항보다 무조건 크게 되도록 while문 호출(음수 개념을 제외시킴)
         while (equation_minus_constant < equation_minus_answer) {
 
             equation_minus_constant = Math.floor(Math.random() * 50);
@@ -301,7 +311,7 @@
         }
         $("#equation_minus_span").text(`${equation_minus_constant} - X = ${equation_minus_answer}`);
 
-        // 약수들을 구하고 그 중 하나를 return하는 함수
+        //인자값의 약수를 구하고 그 중 하나를 return하는 함수 선언
         function divisors(integer) {
             // console.log(integer);
             let divisor_list = [];
@@ -315,7 +325,7 @@
             return picked_divisor;
         }
 
-        // equation_mulyiply_answer가 소수인지 아닌지 판별하는 함수
+        //인자값이 소수인지 아닌지 판별하는 함수 선언
         function chkPrime(integer) {
             for (var i = 2; i < integer; i++) {
                 var result = integer % i;
@@ -326,22 +336,27 @@
             return true;
         }
 
-        let equation_multiply_answer = Math.floor(Math.random() * 300);
+        //곱하기 연산 식의 초기값 설정
+        let equation_multiply_answer = Math.floor(Math.random() * 300); //우변의 상수항
+        //우변의 숫자가 1 또는 소수가 아닐 때까지 해당 while문을 실행(만약 우변의 상수항이 1또는 소수가 되면, 해의 값이 너무 쉽게 구해짐)
         while (equation_multiply_answer == 1 || chkPrime(equation_multiply_answer)) {
 
             equation_multiply_answer = Math.floor(Math.random() * 300);
         }
-        let equation_multiply_constant = divisors(equation_multiply_answer);
+        let equation_multiply_constant = divisors(equation_multiply_answer); //좌변의 상수항(우변 상수항의 약수가 좌변의 상수항이 되도록 함)
         $("#equation_multiply_span").text(`${equation_multiply_constant} * X = ${equation_multiply_answer}`);
 
-        let equation_divide_constant = Math.floor(Math.random() * 300);
+        //나누기 연산 식의 초기값 설정
+        let equation_divide_constant = Math.floor(Math.random() * 300); //좌변의 상수항
+        //좌변의 숫자가 1 또는 소수가 아닐 때까지 해당 while문을 실행(만약 우변의 상수항이 1또는 소수가 되면, 해의 값이 너무 쉽게 구해짐)
         while (equation_divide_constant == 1 || chkPrime(equation_divide_constant)) {
 
             equation_divide_constant = Math.floor(Math.random() * 300);
         }
-        let equation_divide_answer = divisors(equation_divide_constant);
+        let equation_divide_answer = divisors(equation_divide_constant); //우변의 상수항(좌변 상수항의 약수가 우변의 상수항이 되도록 함)
         $("#equation_divide_span").text(`${equation_divide_constant} ÷ X = ${equation_divide_answer}`);
 
+        //더하기 방정식 해에 대한 정답 확인 함수 선언
         function equation_plus_check() {
 
             let user_answer = $("input[name=equation_plus_box]").val();
@@ -359,6 +374,7 @@
             }
         }
 
+        //빼기 방정식 해에 대한 정답 확인 함수 선언
         function equation_minus_check() {
 
             let user_answer = $("input[name=equation_minus_box]").val();
@@ -376,6 +392,7 @@
             }
         }
 
+        //곱하기 방정식 해에 대한 정답 확인 함수 선언
         function equation_multiply_check() {
 
             let user_answer = $("input[name=equation_multiply_box]").val();
@@ -393,6 +410,7 @@
             }
         }
 
+        //나누기 방정식 해에 대한 정답 확인 함수 선언
         function equation_divide_check() {
 
             let user_answer = $("input[name=equation_divide_box]").val();
@@ -410,6 +428,7 @@
             }
         }
 
+        //더하기 방정식 새로고침 함수 선언
         function equation_plus_refresh() {
 
             equation_plus_constant = Math.floor(Math.random() * 50);
@@ -425,6 +444,7 @@
             $("#plus_equation_input").val('');
         }
 
+        //빼기 방정식 새로고침 함수 선언
         function equation_minus_refresh() {
 
             equation_minus_constant = Math.floor(Math.random() * 50);
@@ -440,6 +460,7 @@
             $("#minus_equation_input").val('');
         }
 
+        //곱하기 방정식 새로고침 함수 선언
         function equation_multiply_refresh() {
 
             equation_multiply_answer = Math.floor(Math.random() * 300);
@@ -454,6 +475,7 @@
             $("#multiply_equation_input").val('');
         }
 
+        //나누기 방정식 새로고침 함수 선언
         function equation_divide_refresh() {
 
             equation_divide_constant = Math.floor(Math.random() * 300);
@@ -468,23 +490,10 @@
             $("#divide_equation_input").val('');
         }
 
-        /* 분수 사칙연산 */
-        // 최대공약수와 최소공배수를 반환하는 함수
+        /*3. 분수 사칙연산 */
+        //최대공약수와 최소공배수를 반환하는 함수 선언
         function gcdlcm(a, b) {
 
-            // if (a == 1 && b == 1) {
-
-            //     return [1, 1]
-            // } else if (a == 1 && b != 1) {
-
-            //     return [1, b]
-            // } else if (b == 1 && a != 1) {
-
-            //     return [1, a]
-            // } else if (a == b) {
-
-            //     return 'same'
-            // }
             let gcd = 1;
             let lcm = 1;
             for (let i = 1; i <= Math.min(a, b); i++) {
@@ -496,7 +505,8 @@
             return [gcd, lcm]
         }
 
-        // 분수 사칙연산 초기값 설정
+        //분수 사칙연산 초기값 설정(변수 내 'upper'은 분자를 의미하고, 변수 내 'lower'은 분모를 의미함, 변수 내 'first'는 좌변의 첫 번째 항을 의미하고, 'second'는 좌변의 두 번째 항을 의미함)
+        //분수 더하기 연산 식의 초기값 설정(분모, 분자 둘 다 1에서 10사이의 임의의 정수가 되도록 설정함)
         let fraction_plus_upper_first = Math.floor(Math.random() * 10);
         while (fraction_plus_upper_first == 0) {
 
@@ -523,6 +533,7 @@
         $("#fraction_plus_upper_second").text(`${fraction_plus_upper_second}`);
         $("#fraction_plus_lower_second").text(`${fraction_plus_lower_second}`);
 
+        //분수 빼기 연산 식의 초기값 설정(분모, 분자 둘 다 1에서 10사이의 임의의 정수가 되도록 설정함)
         let fraction_minus_upper_first = Math.floor(Math.random() * 10);
         while (fraction_minus_upper_first == 0) {
 
@@ -543,6 +554,8 @@
 
             fraction_minus_lower_second = Math.floor(Math.random() * 10);
         }
+
+        //만약 빼기 연산식의 결과가 음수가 되면, 좌변의 모든 항의 분모 분자 값을 다시 설정함
         while ((fraction_minus_upper_first / fraction_minus_lower_first) - (fraction_minus_upper_second / fraction_minus_lower_second) <= 0) {
 
             fraction_minus_upper_first = Math.floor(Math.random() * 10);
@@ -575,6 +588,7 @@
         $("#fraction_minus_upper_second").text(`${fraction_minus_upper_second}`);
         $("#fraction_minus_lower_second").text(`${fraction_minus_lower_second}`);
 
+        //분수 곱하기 연산 식의 초기값 설정(분모, 분자 둘 다 1에서 10사이의 임의의 정수가 되도록 설정함)
         let fraction_multiply_upper_first = Math.floor(Math.random() * 10);
         while (fraction_multiply_upper_first == 0) {
 
@@ -601,6 +615,7 @@
         $("#fraction_multiply_upper_second").text(`${fraction_multiply_upper_second}`);
         $("#fraction_multiply_lower_second").text(`${fraction_multiply_lower_second}`);
 
+        //분수 나누기 연산 식의 초기값 설정(분모, 분자 둘 다 1에서 10사이의 임의의 정수가 되도록 설정함)
         let fraction_divide_upper_first = Math.floor(Math.random() * 10);
         while (fraction_divide_upper_first == 0) {
 
@@ -627,13 +642,8 @@
         $("#fraction_divide_upper_second").text(`${fraction_divide_upper_second}`);
         $("#fraction_divide_lower_second").text(`${fraction_divide_lower_second}`);
 
-        // fraction 정답 확인 함수 선언
+        //분수 더하기 연산의 정답 확인 함수 선언
         function fraction_plus_check() {
-
-            // console.log(fraction_plus_upper_first);
-            // console.log(fraction_plus_lower_first);
-            // console.log(fraction_plus_upper_second);
-            // console.log(fraction_plus_lower_second);
 
             let gcd_and_lcm = gcdlcm(fraction_plus_lower_first, fraction_plus_lower_second);
             let gcd = gcd_and_lcm[0]
@@ -681,12 +691,8 @@
             }
         }
 
+        //분수 빼기 연산의 정답 확인 함수 선언
         function fraction_minus_check() {
-
-            // console.log(fraction_plus_upper_first);
-            // console.log(fraction_plus_lower_first);
-            // console.log(fraction_plus_upper_second);
-            // console.log(fraction_plus_lower_second);
 
             let gcd_and_lcm = gcdlcm(fraction_minus_lower_first, fraction_minus_lower_second);
             let gcd = gcd_and_lcm[0]
@@ -734,6 +740,7 @@
 
         }
 
+        //분수 곱하기 연산의 정답 확인 함수 선언
         function fraction_multiply_check() {
 
             let answer_upper = fraction_multiply_upper_first * fraction_multiply_upper_second;
@@ -769,6 +776,7 @@
 
         }
 
+        //분수 나누기 연산의 정답 확인 함수 선언
         function fraction_divide_check() {
 
             let answer_upper = fraction_divide_upper_first * fraction_divide_lower_second;
@@ -803,7 +811,7 @@
             }
         }
 
-        // 분수 사칙연산 새로고침 함수 선언
+        // 분수 더하기 연산의 새로고침 함수 선언
         function fraction_plus_refresh() {
 
             fraction_plus_upper_first = Math.floor(Math.random() * 10);
@@ -838,6 +846,7 @@
             $("#fraction_plus_check_span").empty();
         }
 
+        // 분수 빼기 연산의 새로고침 함수 선언
         function fraction_minus_refresh() {
 
             fraction_minus_upper_first = Math.floor(Math.random() * 10);
@@ -898,6 +907,7 @@
             $("#fraction_minus_check_span").empty();
         }
 
+        // 분수 곱하기 연산의 새로고침 함수 선언
         function fraction_multiply_refresh() {
 
             fraction_multiply_upper_first = Math.floor(Math.random() * 10);
@@ -932,6 +942,7 @@
             $("#fraction_multiply_check_span").empty();
         }
 
+        // 분수 나누기 연산의 새로고침 함수 선언
         function fraction_divide_refresh() {
 
             fraction_divide_upper_first = Math.floor(Math.random() * 10);
@@ -966,8 +977,8 @@
             $("#fraction_divide_check_span").empty();
         }
 
-        /* 두 시간의 합 */
-        // 두 시간의 초기값 설정
+        /* 4. 두 시간의 합 */
+        //두 시간의 초기값 설정
         let first_time_hour = Math.floor(Math.random() * 10);
         let first_time_minute = Math.floor(Math.random() * 60);
         let second_time_hour = Math.floor(Math.random() * 10);
@@ -978,7 +989,7 @@
         $("#second_time_hour").text(`${second_time_hour}`);
         $("#second_time_minute").text(`${second_time_minute}`);
 
-        // 정답 확인 함수 선언
+        //정답 확인 함수 선언
         function sum_of_time_check() {
 
             let answer_hour = first_time_hour + second_time_hour;
@@ -1011,7 +1022,7 @@
             }
         }
 
-        // 새로고침 함수 선언
+        //새로고침 함수 선언
         function sum_of_time_refresh() {
 
             first_time_hour = Math.floor(Math.random() * 10);
@@ -1029,15 +1040,15 @@
             $("#minute_input").val('');
         }
 
-        /* 원주 구하기 */
-        // ajax로 circle 이미지 불러오기
+        /* 5. 원주 구하기 */
+        //ajax를 이용하여, '/circle_img_process'url에 GET HTML request 실시
         $.ajax({
-            type: "GET", // GET 방식으로 요청한다.
+            type: "GET",
             url: "/circle_img_process",
-            data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
-            success: function(response) { // 서버에서 준 결과를 response라는 변수에 담음
+            data: {},
+            success: function(response) { //서버에서 준 결과를 response라는 변수에 담음(즉, 생성된 circle img의 주소와 해당 circle의 반지름이 'JSON'type으로 response라는 변수에 담김)
 
-                let circle_path = response["circle_path"]; // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+                let circle_path = response["circle_path"];
                 let radius = response["radius"];
                 console.log(circle_path, typeof(circle_path));
                 console.log(radius, typeof(radius));
@@ -1046,6 +1057,7 @@
             }
         })
 
+        //정답 확인 함수 선언
         function circle_check() {
 
             let radius_span_val = parseFloat($("#radius_span").text());
@@ -1060,16 +1072,17 @@
             }
         }
 
+        //새로고침 함수 선언
         function circle_refresh() {
 
             $("#circle_span").empty();
             $.ajax({
-                type: "GET", // GET 방식으로 요청한다.
+                type: "GET",
                 url: "/circle_img_process",
-                data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
-                success: function(response) { // 서버에서 준 결과를 response라는 변수에 담음
+                data: {},
+                success: function(response) {
 
-                    let circle_path = response["circle_path"]; // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+                    let circle_path = response["circle_path"];
                     let radius = response["radius"];
                     console.log(circle_path, typeof(circle_path));
                     console.log(radius, typeof(radius));
@@ -1081,92 +1094,96 @@
             })
         }
 
-        /* 원주 구하기 */
-        // 연비 초기값 설정
+        /* 6. 두 비의 관계를 연비로 나타내기 */
+        //연비 초기값 설정(첫 번째 식의 왼쪽 숫자를 'firstelement'변수로 지정하고, 두 번째 식의 오른쪽 숫자를 'secondelement'변수로 지정함)
+        //첫 번째 연비문제 초기값 설정
         let ratio_first_firstelement = Math.floor(Math.random() * 20);
         while (ratio_first_firstelement == 0) {
 
-            ratio_first_firstelement = Math.floor(Math.random() * 10);
+            ratio_first_firstelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_first_secondelement = Math.floor(Math.random() * 20);
         while (ratio_first_secondelement == 0) {
 
-            ratio_first_secondelement = Math.floor(Math.random() * 10);
+            ratio_first_secondelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_first_thirdelement = Math.floor(Math.random() * 20);
         while (ratio_first_thirdelement == 0) {
 
-            ratio_first_thirdelement = Math.floor(Math.random() * 10);
+            ratio_first_thirdelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_first_fourthelement = Math.floor(Math.random() * 20);
         while (ratio_first_fourthelement == 0) {
 
-            ratio_first_fourthelement = Math.floor(Math.random() * 10);
+            ratio_first_fourthelement = Math.floor(Math.random() * 20);
         }
         $("#ratio_first_firstrow_firstelement").text(`${ratio_first_firstelement}`);
         $("#ratio_first_firstrow_secondelement").text(`${ratio_first_secondelement}`);
         $("#ratio_first_secondrow_secondelement").text(`${ratio_first_thirdelement}`);
         $("#ratio_first_secondrow_thirdelement").text(`${ratio_first_fourthelement}`);
 
+        //두 번째 연비문제 초기값 설정
         let ratio_second_firstelement = Math.floor(Math.random() * 20);
         while (ratio_second_firstelement == 0) {
 
-            ratio_second_firstelement = Math.floor(Math.random() * 10);
+            ratio_second_firstelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_second_secondelement = Math.floor(Math.random() * 20);
         while (ratio_second_secondelement == 0) {
 
-            ratio_second_secondelement = Math.floor(Math.random() * 10);
+            ratio_second_secondelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_second_thirdelement = Math.floor(Math.random() * 20);
         while (ratio_second_thirdelement == 0) {
 
-            ratio_second_thirdelement = Math.floor(Math.random() * 10);
+            ratio_second_thirdelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_second_fourthelement = Math.floor(Math.random() * 20);
         while (ratio_second_fourthelement == 0) {
 
-            ratio_second_fourthelement = Math.floor(Math.random() * 10);
+            ratio_second_fourthelement = Math.floor(Math.random() * 20);
         }
         $("#ratio_second_firstrow_firstelement").text(`${ratio_second_firstelement}`);
         $("#ratio_second_firstrow_secondelement").text(`${ratio_second_secondelement}`);
         $("#ratio_second_secondrow_firstelement").text(`${ratio_second_thirdelement}`);
         $("#ratio_second_secondrow_thirdelement").text(`${ratio_second_fourthelement}`);
 
+        //세 번째 연비문제 초기값 설정
         let ratio_third_firstelement = Math.floor(Math.random() * 20);
         while (ratio_third_firstelement == 0) {
 
-            ratio_third_firstelement = Math.floor(Math.random() * 10);
+            ratio_third_firstelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_third_secondelement = Math.floor(Math.random() * 20);
         while (ratio_third_secondelement == 0) {
 
-            ratio_third_secondelement = Math.floor(Math.random() * 10);
+            ratio_third_secondelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_third_thirdelement = Math.floor(Math.random() * 20);
         while (ratio_third_thirdelement == 0) {
 
-            ratio_third_thirdelement = Math.floor(Math.random() * 10);
+            ratio_third_thirdelement = Math.floor(Math.random() * 20);
         }
 
         let ratio_third_fourthelement = Math.floor(Math.random() * 20);
         while (ratio_third_fourthelement == 0) {
 
-            ratio_third_fourthelement = Math.floor(Math.random() * 10);
+            ratio_third_fourthelement = Math.floor(Math.random() * 20);
         }
         $("#ratio_third_firstrow_firstelement").text(`${ratio_third_firstelement}`);
         $("#ratio_third_firstrow_thirdelement").text(`${ratio_third_secondelement}`);
         $("#ratio_third_secondrow_secondelement").text(`${ratio_third_thirdelement}`);
         $("#ratio_third_secondrow_thirdelement").text(`${ratio_third_fourthelement}`);
 
+        //첫 번째 연비문제의 정답 확인 함수 선언
         function ratio_first_check() {
 
             let first_answer_before_divided = ratio_first_firstelement * ratio_first_thirdelement;
@@ -1176,6 +1193,7 @@
             console.log("second_answer_before_divided :", second_answer_before_divided)
             console.log("third_answer_before_divided :", third_answer_before_divided)
 
+            //구해진 세 숫자의 최대공약수로 해당 세 숫자를 약분함
             let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
             let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
             console.log("gcd_for_three_answer :", gcd_for_three_answer);
@@ -1203,6 +1221,7 @@
             }
         }
 
+        //두 번째 연비문제의 정답 확인 함수 선언
         function ratio_second_check() {
 
             let first_answer_before_divided = ratio_second_firstelement * ratio_second_thirdelement;
@@ -1212,6 +1231,7 @@
             console.log("second_answer_before_divided :", second_answer_before_divided)
             console.log("third_answer_before_divided :", third_answer_before_divided)
 
+            //구해진 세 숫자의 최대공약수로 해당 세 숫자를 약분함
             let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
             let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
             console.log("gcd_for_three_answer :", gcd_for_three_answer);
@@ -1239,6 +1259,7 @@
             }
         }
 
+        //세 번째 연비문제의 정답 확인 함수 선언
         function ratio_third_check() {
 
             let first_answer_before_divided = ratio_third_firstelement * ratio_third_fourthelement;
@@ -1248,6 +1269,7 @@
             console.log("second_answer_before_divided :", second_answer_before_divided)
             console.log("third_answer_before_divided :", third_answer_before_divided)
 
+            //구해진 세 숫자의 최대공약수로 해당 세 숫자를 약분함
             let first_pair_gcd = gcdlcm(first_answer_before_divided, second_answer_before_divided)[0];
             let gcd_for_three_answer = gcdlcm(first_pair_gcd, third_answer_before_divided)[0];
             console.log("gcd_for_three_answer :", gcd_for_three_answer);
@@ -1275,6 +1297,7 @@
             }
         }
 
+        //첫 번째 연비문제의 새로고침 함수 선언
         function ratio_first_refresh() {
 
             ratio_first_firstelement = Math.floor(Math.random() * 20);
@@ -1311,6 +1334,7 @@
             $("input[name=ratio_first_user_thirdelement]").val('')
         }
 
+        //두 번째 연비문제의 새로고침 함수 선언
         function ratio_second_refresh() {
 
             ratio_second_firstelement = Math.floor(Math.random() * 20);
@@ -1347,6 +1371,7 @@
             $("input[name=ratio_second_user_thirdelement]").val('')
         }
 
+        //세 번째 연비문제의 새로고침 함수 선언
         function ratio_third_refresh() {
 
             ratio_third_firstelement = Math.floor(Math.random() * 20);
